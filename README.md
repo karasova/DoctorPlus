@@ -22,6 +22,7 @@ App name DoctorPlus
 SharedPreferences preferences;
 preferences = getSharedPreferences("user_id", Context.MODE_PRIVATE);
 
+```
 Чтобы поместить переменную 
 
 ```
