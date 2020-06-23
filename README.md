@@ -21,19 +21,14 @@ App name DoctorPlus
 ```
 SharedPreferences preferences;
 preferences = getSharedPreferences("user_id", Context.MODE_PRIVATE);
-
 ```
 Чтобы поместить переменную 
 
 ```
-
 preferences.edit().putString("user_id", USER_ID).apply();
-
 ```
 Чтобы достать ее
 
 ```
-
 String user_id = preferences.getString("user_id", "-1");
-
 ```
