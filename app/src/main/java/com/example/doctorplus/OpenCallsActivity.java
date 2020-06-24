@@ -1,6 +1,8 @@
 package com.example.doctorplus;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class OpenCallsActivity extends AppCompatActivity {
     final static String URL_LOC = "http://192.168.0.14/doctorplus.nti-ar.ru/admin/?table=calls&action=getAll";
+    SharedPreferences preferences;
 
     CallsListAdapter adapter;
     ListView listView;
@@ -31,7 +34,8 @@ public class OpenCallsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_open_calls);
         listView = findViewById(R.id.list);
-        adapter = new CallsListAdapter(this, infos);
+        preferences = getSharedPreferences("user_id", Context.MODE_PRIVATE);
+        adapter = new CallsListAdapter(this, infos, preferences);
         listView.setAdapter(adapter);
         RequestTask task = new RequestTask();
         task.execute(new int[]{1});

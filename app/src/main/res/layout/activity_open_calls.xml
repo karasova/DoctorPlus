@@ -26,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Доступные вызовы"
-            android:textSize="35dp"
+            android:textSize="30dp"
             android:textStyle="bold"
             android:textColor="@color/textColor"/>
 
@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Нажмите на вызов, чтобы выбрать его как текущий"
-            android:textSize="20dp"
+            android:textSize="15dp"
             android:layout_marginTop="10dp"
             android:textColor="@color/textColor"/>
     </LinearLayout>
@@ -44,6 +44,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/list"
         android:padding="15dp"
-        android:divider="@null"/>
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10.0dp"/>
 
 </LinearLayout>

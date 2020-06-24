@@ -1,7 +1,9 @@
 package com.example.doctorplus;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +13,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 
 import androidx.core.content.ContextCompat;
@@ -18,10 +22,12 @@ import androidx.core.content.ContextCompat;
 public class CallsListAdapter extends BaseAdapter {
     Context ctx;
     ArrayList<CallModel> calls;
+    SharedPreferences preferences;
 
-    public CallsListAdapter(Context ctx, ArrayList<CallModel> calls) {
+    public CallsListAdapter(Context ctx, ArrayList<CallModel> calls, SharedPreferences preferences) {
         this.ctx = ctx;
         this.calls = calls;
+        this.preferences = preferences;
         Log.d("asynctest", "privet");
     }
 
@@ -64,9 +70,41 @@ public class CallsListAdapter extends BaseAdapter {
         layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                v.setBackgroundColor(Color.RED);
+                ChangeTask task = new ChangeTask();
+                task.execute(call.id);
             }
         });
         return convertView;
+    }
+
+    class ChangeTask extends AsyncTask<Integer, Integer, Void> {
+
+        public void changeStatus(int call_id) {
+            int user_id = preferences.getInt("user_id", -1);
+            Log.i("testForAdapter", String.valueOf(user_id));
+            String url_server = "http://192.168.0.14/doctorplus.nti-ar.ru/admin/?table=calls&action=changeStatus&call_id=" + call_id + "&owner_id=" + user_id;
+
+//            try {
+//                URL url = new URL(url_server);
+//                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+//                urlConnection.connect();
+//
+//                BufferRead
+//            }
+        }
+
+        @Override
+        protected Void doInBackground(Integer... call) {
+            for (Integer var: call) {
+                changeStatus(var);
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            Log.i("testForAdapter", "i'm work!!!");
+            super.onPostExecute(aVoid);
+        }
     }
 }

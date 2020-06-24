@@ -7,27 +7,75 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/logo"
+        android:layout_weight="0.2"
+        android:layout_gravity="center"></ImageView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Вход"
+        android:textSize="20pt"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:padding="15dp"
+        android:layout_gravity="center"
+        android:textAlignment="center"></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Введите ваш идентификационный номер (ID), выданный в больнице"
+        android:textSize="15dp"
+        android:textColor="@color/headerColor"
+        android:padding="15dp"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"></TextView>
+
     <EditText
         android:id="@+id/user_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your nickname"
+        android:hint="ID"
         android:gravity="center"
+        android:background="@drawable/field_blue"
+        android:padding="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         />
     <EditText
         android:id="@+id/pass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your nickname"
+        android:hint="Пароль"
         android:gravity="center"
+        android:background="@drawable/field_blue"
+        android:padding="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         />
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Authorization"
-        android:onClick="onClick"/>
+        android:text="Войти"
+        android:onClick="onClick"
+        android:background="@drawable/field_orange"
+        android:padding="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="50dp"
+        android:stateListAnimator="@null"
+        android:textColor="@color/textColor"/>
 
     <TextView
         android:layout_width="match_parent"

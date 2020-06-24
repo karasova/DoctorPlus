@@ -124,16 +124,16 @@ public class StartActivity extends AppCompatActivity {
             int formatedTime = Integer.parseInt(tf.format(currentTime));
             Log.i("user", "time = " + formatedTime);
             if (formatedTime >= 0 && formatedTime <= 4) {
-                greet.setText("Доброй ночи, " + name[1] + "!");
+                greet.setText("Доброй ночи, " + name[1] + ".");
             }
             if (formatedTime > 4 && formatedTime < 13) {
-                greet.setText("Доброе утро, " + name[1] + "!");
+                greet.setText("Доброе утро, " + name[1] + ".");
             }
             if (formatedTime >= 13 && formatedTime < 19) {
-                greet.setText("Добрый день, " + name[1] + "!");
+                greet.setText("Добрый день, " + name[1] + ".");
             }
             if (formatedTime >= 19 && formatedTime <= 23) {
-                greet.setText("Добрый вечер, " + name[1] + "!");
+                greet.setText("Добрый вечер, " + name[1] + ".");
             }
         }
 
