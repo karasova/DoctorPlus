@@ -5,35 +5,65 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200px"
-        android:orientation="horizontal">
+        android:layout_height="250px"
+        android:orientation="horizontal"
+        android:padding="15dp">
 
         <ImageView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:id="@+id/logo"
-            android:layout_weight="1"></ImageView>
+            android:layout_weight="0.2"></ImageView>
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:id="@+id/date"
             android:textSize="12pt"
-            android:layout_weight="1"/>
+            android:layout_weight="0.8"
+            android:textAlignment="textEnd"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>
 
     </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/greet"
-        android:textSize="12pt"/>
+        android:textSize="12pt"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:padding="15dp"/>
 
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/button"
-        android:onClick="onClick"></Button>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/layout"
+        android:background="@drawable/field_orange"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:padding="20dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="12pt"
+                android:textStyle="bold"
+                android:text="Доступные вызовы"
+                android:textColor="@color/textColor"
+                android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/next"
+            />
+
+
+    </LinearLayout>
 
 
 </LinearLayout>

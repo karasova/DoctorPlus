@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout"
+        android:orientation="vertical"
+        android:background="@color/colorPrimary"
+        android:padding="30dp">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:onClick="onClick"
+            android:stateListAnimator="@null"
+            android:layout_marginBottom="20dp"
+            android:background="@color/colorPrimary"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Доступные вызовы"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:textColor="@color/textColor"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Нажмите на вызов, чтобы выбрать его как текущий"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/textColor"/>
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/list"
+        android:padding="15dp"
+        android:divider="@null"/>
+
+</LinearLayout>

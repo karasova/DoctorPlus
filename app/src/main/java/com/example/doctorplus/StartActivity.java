@@ -3,11 +3,13 @@ package com.example.doctorplus;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -32,12 +34,13 @@ public class StartActivity extends AppCompatActivity {
     SimpleDateFormat df = new SimpleDateFormat("dd MMMM");
     SimpleDateFormat tf = new SimpleDateFormat("HH");
     UsersFetch users_fetch = new UsersFetch();
+    LinearLayout layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
-
+        layout = findViewById(R.id.layout);
 
         preferences = getSharedPreferences("user_id", Context.MODE_PRIVATE);
 
@@ -49,12 +52,14 @@ public class StartActivity extends AppCompatActivity {
         date.setText(formattedDate);
 
         users_fetch.execute(new int[]{1});
-    }
 
-    protected void onClick (View v) {
-        Intent i = new Intent(StartActivity.this, OpenCallsActivity.class);
-        startActivity(i);
-
+        layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(StartActivity.this, OpenCallsActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     public class UsersFetch extends AsyncTask<int[], Integer, Void> {
@@ -113,17 +118,22 @@ public class StartActivity extends AppCompatActivity {
             String full_name = user.full_name;
             String[] name = full_name.split(" ");
 
+            Log.i("user", name[1]);
+
 
             int formatedTime = Integer.parseInt(tf.format(currentTime));
             Log.i("user", "time = " + formatedTime);
+            if (formatedTime >= 0 && formatedTime <= 4) {
+                greet.setText("Доброй ночи, " + name[1] + "!");
+            }
             if (formatedTime > 4 && formatedTime < 13) {
                 greet.setText("Доброе утро, " + name[1] + "!");
-            } else if (formatedTime > 13 && formatedTime < 19) {
+            }
+            if (formatedTime >= 13 && formatedTime < 19) {
                 greet.setText("Добрый день, " + name[1] + "!");
-            } else if (formatedTime > 19 && formatedTime < 24) {
+            }
+            if (formatedTime >= 19 && formatedTime <= 23) {
                 greet.setText("Добрый вечер, " + name[1] + "!");
-            } else if (formatedTime > 0 && formatedTime < 4) {
-                greet.setText("Доброй ночи, " + name[1] + "!");
             }
         }
 
