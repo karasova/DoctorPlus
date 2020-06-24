@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SettingsActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/infot1"
+        android:textSize="14pt"
+        android:text="Изменить личные данные"
+        android:layout_weight="1"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/login"
+            android:text="Введите новое имя пользователя"
+            android:textSize="12pt"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/logedit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Enter new nickname"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/password"
+            android:text="Введите новый пароль: "
+            android:textSize="12pt"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/passedit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:hint="Enter new password"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tres"
+        android:textSize="12pt" />
+    <Button
+        android:id="@+id/butinf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Обновить"
+        android:onClick="onClick" />
+
+
+</LinearLayout>

@@ -20,6 +20,11 @@
         <activity android:name=".StartActivity"></activity>
         <activity android:name=".EnterActivity"></activity>
         <activity android:name=".OpenCallsActivity"></activity>
+        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".InfoActivity"></activity>
+        <activity android:name=".SettingsActivity"></activity>
+        <activity android:name=".ActiveCallActivity"></activity>
+
     </application>
 
 </manifest>

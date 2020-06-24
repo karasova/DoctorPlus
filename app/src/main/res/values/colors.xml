@@ -6,4 +6,5 @@
     <color name="headerColor">#7F85A8</color>
     <color name="fieldColor">#F0F6F9</color>
     <color name="textColor">#FFFFFF</color>
+    <color name="menuColor">#F9FBFC</color>
 </resources>

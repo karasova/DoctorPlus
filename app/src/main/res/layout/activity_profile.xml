@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <Button
+        android:id="@+id/butexit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Выйти"
+        android:onClick="onClick"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/tt1"
+        android:textSize="20pt"
+        android:text="Личный кабинет"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/butinf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Информация"
+        android:onClick="onClick"/>
+
+    <Button
+        android:id="@+id/butnastr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Настройки"
+        android:onClick="onClick"/>
+
+</LinearLayout>

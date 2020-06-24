@@ -1,69 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="250px"
-        android:orientation="horizontal"
-        android:padding="15dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:id="@+id/logo"
-            android:layout_weight="0.2"></ImageView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:padding="15dp">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:id="@+id/date"
-            android:textSize="12pt"
-            android:layout_weight="0.8"
-            android:textAlignment="textEnd"
-            android:textColor="@color/colorPrimary"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp"/>
-
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/greet"
-        android:textSize="20pt"
-        android:textStyle="bold"
-        android:textColor="@color/colorPrimary"
-        android:padding="15dp"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/layout"
-        android:background="@drawable/field_orange"
-        android:layout_marginRight="15dp"
-        android:layout_marginLeft="15dp"
-        android:padding="20dp">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/logo"
+                android:layout_weight="0.2"></ImageView>
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/date"
                 android:textSize="12pt"
+                android:layout_weight="0.8"
+                android:textAlignment="textEnd"
+                android:textColor="@color/colorPrimary"
                 android:textStyle="bold"
-                android:text="Доступные вызовы"
-                android:textColor="@color/textColor"
-                android:layout_weight="1"/>
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/greet"
+            android:textSize="18pt"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:padding="15dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/layout"
+            android:background="@drawable/field_orange"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:padding="20dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="12pt"
+                    android:textStyle="bold"
+                    android:text="Доступные вызовы"
+                    android:textColor="@color/textColor"
+                    android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/next"
+                android:layout_marginTop="5dp"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:id="@+id/menu"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/next"
-            android:layout_marginTop="5dp"/>
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/home_active"
+            android:background="@color/menuColor"
+            android:padding="20dp"
+            />
 
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/calls"
+            android:background="@color/menuColor"
+            android:padding="22dp"
+            android:id="@+id/calls"
+            />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/account"
+            android:background="@color/menuColor"
+            android:id="@+id/account"
+            android:padding="20dp"
+            />
 
     </LinearLayout>
 
 
-</LinearLayout>
+</RelativeLayout>

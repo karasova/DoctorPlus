@@ -36,6 +36,8 @@ public class StartActivity extends AppCompatActivity {
     UsersFetch users_fetch = new UsersFetch();
     LinearLayout layout;
 
+    ImageView calls, account;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +52,24 @@ public class StartActivity extends AppCompatActivity {
         date = findViewById(R.id.date);
         String formattedDate = df.format(currentTime);
         date.setText(formattedDate);
+
+        calls = findViewById(R.id.calls);
+        calls.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(StartActivity.this, ActiveCallActivity.class);
+                startActivity(i);
+            }
+        });
+        account = findViewById(R.id.account);
+        account.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(StartActivity.this, ProfileActivity.class);
+                startActivity(i);
+            }
+        });
+
 
         users_fetch.execute(new int[]{1});
 
