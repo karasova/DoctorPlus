@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.google.gson.Gson;
@@ -29,6 +30,8 @@ public class OpenCallsActivity extends AppCompatActivity {
     ArrayList<CallModel> infos = new ArrayList<>();
     ArrayList<CallModel> infos_two = new ArrayList<>();
 
+    ImageView calls, account, home;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +40,32 @@ public class OpenCallsActivity extends AppCompatActivity {
         preferences = getSharedPreferences("user_id", Context.MODE_PRIVATE);
         adapter = new CallsListAdapter(this, infos, preferences);
         listView.setAdapter(adapter);
+
+        calls = findViewById(R.id.calls);
+        calls.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(OpenCallsActivity.this, CallActivity.class);
+                startActivity(i);
+            }
+        });
+        account = findViewById(R.id.account);
+        account.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(OpenCallsActivity.this, ProfileActivity.class);
+                startActivity(i);
+            }
+        });
+        home = findViewById(R.id.home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(OpenCallsActivity.this, StartActivity.class);
+                startActivity(i);
+            }
+        });
+
         RequestTask task = new RequestTask();
         task.execute(new int[]{1});
     }
