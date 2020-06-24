@@ -32,3 +32,7 @@ preferences.edit().putString("user_id", USER_ID).apply();
 ```
 String user_id = preferences.getString("user_id", "-1");
 ```
+
+</LinearLayout>
+
+</LinearLayout>
