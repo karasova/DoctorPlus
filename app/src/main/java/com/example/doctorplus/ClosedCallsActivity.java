@@ -33,10 +33,10 @@ public class ClosedCallsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_closed_calls);
         listView = findViewById(R.id.list);
-        preferences = getSharedPreferences("user_id", Context.MODE_PRIVATE);
+
         adapter = new CallsListAdapter(this, infos, preferences);
         listView.setAdapter(adapter);
-        user_id = preferences.getInt("user_id", -1);
+
         ClosedTask task = new ClosedTask();
         task.execute(new int[]{1});
     }
@@ -44,6 +44,8 @@ public class ClosedCallsActivity extends AppCompatActivity {
     class ClosedTask extends AsyncTask<int[], Integer, Void> {
 
         public ArrayList<CallModel> getClosedCalls() {
+            preferences = getSharedPreferences("user_id", Context.MODE_PRIVATE);
+            user_id = preferences.getInt("user_id", -1);
             String url_server = "http://192.168.0.14/doctorplus.nti-ar.ru/admin/?table=calls&action=getByField&field=owner_id&value=" + user_id;
 
             try {

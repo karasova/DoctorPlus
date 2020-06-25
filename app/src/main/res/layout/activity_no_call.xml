@@ -33,61 +33,140 @@
 
         </LinearLayout>
 
+
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Нет доступных вызовов" />
+            android:text="Нет активного вызова"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="15pt"
+            android:padding="15dp"></TextView>
+
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="На данный момент не выбран текущий вызов" />
+            android:text="На данный момент не выбран текущий вызов"
+            android:textColor="@color/headerColor"
+            android:textSize="8pt"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"></TextView>
+
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="15dp"
+            android:layout_marginTop="15dp">
 
             <LinearLayout
-                android:layout_width="210dp"
+                android:layout_width="0dp"
+                android:layout_weight= "1"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:onClick="onClick"
-                android:id="@+id/open_calls">
+                android:id="@+id/open_calls"
+                android:background="@drawable/view_orange"
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Доступные вызовы" />
+                    android:text="Доступные вызовы"
+                    android:textSize = "10pt"
+                    android:textColor="@color/textColor"
+                    android:textStyle="bold"
+                    android:padding="15dp"
+
+                    android:layout_marginTop="15dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Посмотрите вызовы, доступные на данный момент." />
+                    android:text="Посмотрите вызовы, доступные на данный момент"
+                    android:textColor = "@color/textColor"
+                    android:textSize="8pt"
+                    android:padding="15dp"
+                    android:layout_marginTop="-15dp"
+                    android:layout_marginBottom="15dp"/>
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:onClick="onClick"
-                android:id="@+id/close_calls">
+                android:id="@+id/close_calls"
+                android:background="@drawable/view_blue"
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Прошлые вызовы"/>
+                    android:text="Прошлые вызовы"
+                    android:textSize = "10pt"
+                    android:textColor="@color/textColor"
+                    android:textStyle="bold"
+                    android:padding="15dp"
+
+                    android:layout_marginTop="15dp"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Посмотрите выполненные вызовы." />
+                    android:text="Просмотрите выполненные вызовы"
+                    android:textColor = "@color/textColor"
+                    android:textSize="8pt"
+                    android:padding="15dp"
+                    android:layout_marginTop="-15dp"
+                    android:layout_marginBottom="32.5dp"/>
 
             </LinearLayout>
 
         </LinearLayout>
 
 
+    </LinearLayout>
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:id="@+id/menu"
+    android:orientation="horizontal"
+    android:layout_alignParentBottom="true">
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:src="@drawable/home"
+        android:background="@color/menuColor"
+        android:padding="20dp"
+        android:id="@+id/home"
+        />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:src="@drawable/calls_active"
+        android:background="@color/menuColor"
+        android:padding="22dp"
+        android:id="@+id/calls"
+        />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:src="@drawable/account"
+        android:background="@color/menuColor"
+        android:id="@+id/account"
+        android:padding="20dp"
+        />
     </LinearLayout>
 
 </RelativeLayout>

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -17,6 +18,8 @@ public class NoCallActivity extends AppCompatActivity {
     Date currentTime = Calendar.getInstance().getTime();
     SimpleDateFormat df = new SimpleDateFormat("dd MMMM");
 
+    ImageView account, home;
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_no_call);
@@ -25,6 +28,24 @@ public class NoCallActivity extends AppCompatActivity {
         date = findViewById(R.id.date);
         String formattedDate = df.format(currentTime);
         date.setText(formattedDate);
+
+
+        account = findViewById(R.id.account);
+        account.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(NoCallActivity.this, ProfileActivity.class);
+                startActivity(i);
+            }
+        });
+        home = findViewById(R.id.home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(NoCallActivity.this, StartActivity.class);
+                startActivity(i);
+            }
+        });
 
 
     }

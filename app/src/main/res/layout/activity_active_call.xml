@@ -1,130 +1,248 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:src="@drawable/logo"></ImageView>
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="0.8"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12pt"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-15dp"
+                android:padding="15dp"
+                android:text="Текущий вызов"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15pt"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/adress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/field_orange"
+                android:padding="15dp"
+                android:textColor="@color/textColor"
+                android:textSize="10pt"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="-15dp"
+                android:padding="15dp"
+                android:text="Причина вызова"
+                android:textColor="@color/colorPrimary"
+                android:textSize="10pt"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/cause"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/headerColor"
+                android:textSize="8pt"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="-15dp"
+                android:padding="15dp"
+                android:text="Информация о пациенте"
+                android:textColor="@color/colorPrimary"
+                android:textSize="10pt"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/patient_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/headerColor"
+                android:textSize="8pt"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="-15dp"
+                android:padding="15dp"
+                android:text="Контактное лицо"
+                android:textColor="@color/colorPrimary"
+                android:textSize="10pt"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/headerColor"
+                android:textSize="8pt"></TextView>
+
+
+            <LinearLayout
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/field_blue"
+                android:onClick="onClick"
+                android:orientation="horizontal"
+                android:padding="15dp"
+                android:paddingTop="-15dp"
+                android:paddingBottom="-15dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.2"
+                    android:src="@drawable/card"
+                    android:textAlignment="textEnd"></ImageView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="0.6"
+                    android:text="Заполнить карту"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/headerColor"
+                    android:textSize="8pt"></TextView>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.2"
+                    android:src="@drawable/next_arrow"></ImageView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/complete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/field_blue"
+                android:onClick="onClick"
+                android:orientation="horizontal"
+                android:padding="15dp"
+                android:paddingTop="-15dp"
+                android:paddingBottom="-15dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.2"
+                    android:src="@drawable/check"
+                    android:textAlignment="textEnd"></ImageView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="0.6"
+                    android:text="Завершить вызов"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/headerColor"
+                    android:textSize="8pt"></TextView>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.2"
+                    android:src="@drawable/next_arrow"></ImageView>
+
+            </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="80dp"
+        android:id="@+id/menu"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
 
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/home"
+            android:background="@color/menuColor"
+            android:padding="20dp"
+            android:id="@+id/home"
+            />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="250px"
-            android:orientation="horizontal"
-            android:padding="15dp">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/calls_active"
+            android:background="@color/menuColor"
+            android:padding="22dp"
+            android:id="@+id/calls"
+            />
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/logo"
-                android:layout_weight="0.2"></ImageView>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:id="@+id/date"
-                android:textSize="12pt"
-                android:layout_weight="0.8"
-                android:textAlignment="textEnd"
-                android:textColor="@color/colorPrimary"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp"/>
-
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Текуший вызов" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/adress" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Причина вызова" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/cause" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Информация о пациенте" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/patient_info" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Контактное лицо" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/contact" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="249dp"
-            android:orientation="horizontal"
-            android:onClick="onClick"
-            android:id="@+id/card"
-            android:weightSum="5">
-
-            <ImageView
-                android:layout_width="112dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"
-                android:src="@drawable/logo" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:text="Заполнить карту" />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"
-                android:src="@drawable/logo" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onClick"
-            android:id="@+id/complete"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="141dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/logo" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Закончить вызов" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/logo" />
-        </LinearLayout>
-
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/account"
+            android:background="@color/menuColor"
+            android:id="@+id/account"
+            android:padding="20dp"
+            />
     </LinearLayout>
+
 
 </RelativeLayout>
