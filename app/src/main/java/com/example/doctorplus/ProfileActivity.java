@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ProfileActivity extends AppCompatActivity {
     SharedPreferences preferences;
     ImageView calls, home;
+    LinearLayout info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +25,7 @@ public class ProfileActivity extends AppCompatActivity {
         calls.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ProfileActivity.this, ActiveCallActivity.class);
+                Intent i = new Intent(ProfileActivity.this, CallActivity.class);
                 startActivity(i);
             }
         });
@@ -35,6 +37,15 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        info = findViewById(R.id.butinf);
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ProfileActivity.this, InfoActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     public void onClick(View v){
@@ -43,11 +54,7 @@ public class ProfileActivity extends AppCompatActivity {
             Intent i = new Intent(ProfileActivity.this, EnterActivity.class);
             startActivity(i);
         }
-        if (v.getId() == R.id.butinf) {
-            Log.i("profile", "hello");
-            Intent i = new Intent(ProfileActivity.this, InfoActivity.class);
-            startActivity(i);
-        }
+
         if (v.getId() == R.id.butnastr) {
             Intent i = new Intent(ProfileActivity.this, SettingsActivity.class);
             startActivity(i);

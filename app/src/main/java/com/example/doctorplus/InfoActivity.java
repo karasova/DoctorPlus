@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -29,6 +30,7 @@ public class InfoActivity extends AppCompatActivity {
     String name[];
     RequestInfo ri = new RequestInfo();
     SharedPreferences preferences;
+    ImageView calls, home, account;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +43,32 @@ public class InfoActivity extends AppCompatActivity {
         tv5 = findViewById(R.id.scoreedit);
         ri.execute(new int[]{1});
         Log.i("asynctest", "aao");
-        preferences = getSharedPreferences("user_id", Context.MODE_PRIVATE);
+
+
+        calls = findViewById(R.id.calls);
+        calls.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(InfoActivity.this, CallActivity.class);
+                startActivity(i);
+            }
+        });
+        home = findViewById(R.id.home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(InfoActivity.this, StartActivity.class);
+                startActivity(i);
+            }
+        });
+        account = findViewById(R.id.account);
+        account.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(InfoActivity.this, ProfileActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     public void onClick(View v) {
@@ -51,6 +78,7 @@ public class InfoActivity extends AppCompatActivity {
     class RequestInfo extends AsyncTask<int[], Integer, Void> {
 
         public UserModel getData() {
+            preferences = getSharedPreferences("user_id", Context.MODE_PRIVATE);
             int id = preferences.getInt("user_id", -1);
             Log.i("asynctest", "aaooo");
             String set_server_url = "http://192.168.0.14/doctorplus.nti-ar.ru/admin/?table=usersInfo&action=getByField&field=id&value="+id;

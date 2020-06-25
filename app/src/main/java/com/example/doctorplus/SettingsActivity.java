@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +28,7 @@ public class SettingsActivity extends AppCompatActivity {
     int prev;
 
     SharedPreferences preferences;
+    ImageView calls, home, account;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,31 @@ public class SettingsActivity extends AppCompatActivity {
         et2 = findViewById(R.id.passedit);
         prev = 1;
         preferences = getSharedPreferences("user_id", Context.MODE_PRIVATE);
+
+        calls = findViewById(R.id.calls);
+        calls.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(SettingsActivity.this, CallActivity.class);
+                startActivity(i);
+            }
+        });
+        home = findViewById(R.id.home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(SettingsActivity.this, StartActivity.class);
+                startActivity(i);
+            }
+        });
+        account = findViewById(R.id.account);
+        account.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(SettingsActivity.this, ProfileActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
 
