@@ -23,7 +23,7 @@ public class ProfileActivity extends AppCompatActivity {
         calls.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ProfileActivity.this, CallActivity.class);
+                Intent i = new Intent(ProfileActivity.this, ActiveCallActivity.class);
                 startActivity(i);
             }
         });

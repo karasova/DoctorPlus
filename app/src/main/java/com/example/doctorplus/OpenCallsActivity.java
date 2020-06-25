@@ -45,7 +45,7 @@ public class OpenCallsActivity extends AppCompatActivity {
         calls.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(OpenCallsActivity.this, CallActivity.class);
+                Intent i = new Intent(OpenCallsActivity.this, ActiveCallActivity.class);
                 startActivity(i);
             }
         });

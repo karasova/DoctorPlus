@@ -67,13 +67,23 @@ public class CallsListAdapter extends BaseAdapter {
         else {
             layout.setBackground(ContextCompat.getDrawable(ctx, R.drawable.field_blue));
         }
-        layout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ChangeTask task = new ChangeTask();
-                task.execute(call.id);
-            }
-        });
+
+        if (call.status.equals("closed")) {
+            layout.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    v.setBackgroundColor(Color.BLUE);
+                }
+            });
+        }
+        else {
+            layout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ChangeTask task = new ChangeTask();
+                    task.execute(call.id);
+                }
+            });
+        }
         return convertView;
     }
 

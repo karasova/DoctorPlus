@@ -24,6 +24,9 @@
         <activity android:name=".InfoActivity"></activity>
         <activity android:name=".SettingsActivity"></activity>
         <activity android:name=".ActiveCallActivity"></activity>
+        <activity android:name=".NoCallActivity"></activity>
+        <activity android:name=".ClosedCallsActivity"></activity>
+        <activity android:name=".CallActivity"></activity>
 
     </application>
 
