@@ -1,126 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".InfoActivity">
-    <TextView
+    android:orientation="vertical">
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/infot1"
-        android:textSize="20pt"
-        android:text="Профиль"
-        android:layout_weight="1"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="200px"
-        android:orientation="horizontal">
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:padding="15dp">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/logo"
+                android:layout_weight="0.2"></ImageView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="Назад"
+                android:textSize="12pt"
+                android:id="@+id/back"
+                android:onClick="onClick"
+                android:layout_weight="0.8"
+                android:textAlignment="textEnd"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginTop="15dp"/>
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/fam"
-            android:text="Фамилия: "
-            android:textSize="12pt"
-            android:layout_weight="1"/>
+            android:layout_height="wrap_content"
+            android:text="Профиль"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="15pt"
+            android:padding="15dp"></TextView>
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Фамилия"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="11pt"
+            android:padding="15dp"
+            android:layout_marginBottom="-15dp"></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/famedit"
-            android:textSize="12pt"
-            android:layout_weight="1"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="200px"
-        android:orientation="horizontal">
+            android:textColor="@color/headerColor"
+            android:textSize="10pt"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            ></TextView>
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/name"
-            android:text="Имя: "
-            android:textSize="12pt"
-            android:layout_weight="1"/>
+            android:layout_height="wrap_content"
+            android:text="Имя"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="11pt"
+            android:padding="15dp"
+            android:layout_marginBottom="-15dp"></TextView>
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/nameedit"
-            android:textSize="12pt"
-            android:layout_weight="1"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="200px"
-        android:orientation="horizontal">
+            android:textColor="@color/headerColor"
+            android:textSize="10pt"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"></TextView>
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/ot"
-            android:text="Отчество: "
-            android:textSize="12pt"
-            android:layout_weight="1"/>
+            android:layout_height="wrap_content"
+            android:text="Отчество"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="11pt"
+            android:padding="15dp"
+            android:layout_marginBottom="-15dp"></TextView>
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/otedit"
-            android:textSize="12pt"
-            android:layout_weight="1"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="200px"
-        android:orientation="horizontal">
+            android:textColor="@color/headerColor"
+            android:textSize="10pt"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"></TextView>
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/pos"
-            android:text="Должность: "
-            android:textSize="12pt"
-            android:layout_weight="1"/>
+            android:layout_height="wrap_content"
+            android:text="Должность"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="11pt"
+            android:padding="15dp"
+            android:layout_marginBottom="-15dp"></TextView>
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/posedit"
-            android:textSize="12pt"
-            android:layout_weight="1"/>
+            android:textColor="@color/headerColor"
+            android:textSize="10pt"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Рейтинг"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="11pt"
+            android:padding="15dp"
+            android:layout_marginBottom="-15dp"
+            ></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scoreedit"
+            android:textColor="@color/headerColor"
+            android:textSize="10pt"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"></TextView>
+
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200px"
-        android:orientation="horizontal">
+        android:layout_height="80dp"
+        android:id="@+id/menu"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
 
-        <TextView
+        <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:id="@+id/score"
-            android:text="Оценка: "
-            android:textSize="12pt"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:src="@drawable/home"
+            android:background="@color/menuColor"
+            android:padding="20dp"
+            android:id="@+id/home"
+            />
 
-        <TextView
+        <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:id="@+id/scoreedit"
-            android:textSize="12pt"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:src="@drawable/calls"
+            android:background="@color/menuColor"
+            android:padding="22dp"
+            android:id="@+id/calls"
+            />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/account_active"
+            android:background="@color/menuColor"
+            android:id="@+id/account"
+            android:padding="20dp"
+            />
 
     </LinearLayout>
 
-</LinearLayout>
+
+</RelativeLayout>

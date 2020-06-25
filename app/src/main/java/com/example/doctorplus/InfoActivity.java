@@ -43,6 +43,11 @@ public class InfoActivity extends AppCompatActivity {
         Log.i("asynctest", "aao");
         preferences = getSharedPreferences("user_id", Context.MODE_PRIVATE);
     }
+
+    public void onClick(View v) {
+        Intent i = new Intent(InfoActivity.this, ProfileActivity.class);
+        startActivity(i);
+    }
     class RequestInfo extends AsyncTask<int[], Integer, Void> {
 
         public UserModel getData() {

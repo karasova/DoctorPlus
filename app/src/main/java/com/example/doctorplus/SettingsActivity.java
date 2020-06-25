@@ -1,6 +1,7 @@
 package com.example.doctorplus;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,7 +24,6 @@ import java.net.URL;
 public class SettingsActivity extends AppCompatActivity {
 
     EditText et1, et2;
-    TextView tv;
     int prev;
 
     SharedPreferences preferences;
@@ -33,10 +34,11 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
         et1 = findViewById(R.id.logedit);
         et2 = findViewById(R.id.passedit);
-        tv = findViewById(R.id.tres);
         prev = 1;
         preferences = getSharedPreferences("user_id", Context.MODE_PRIVATE);
     }
+
+
     class Request1 extends AsyncTask<int[], Integer, Void> {
 
         public int getData() {
@@ -81,15 +83,24 @@ public class SettingsActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
             if((et1.getText().length()==0) && (et2.getText().length()==0)){
-                tv.setText("Ни одно поле не заполнено");
+                Toast toast = Toast.makeText( getApplicationContext(), "Ни одно поле не заполнено", Toast.LENGTH_SHORT);
+                toast.show();
             }
-            else
-                tv.setText("Данные обновлены");
+            else {
+                Toast toast = Toast.makeText( getApplicationContext(), "Данные обновлены", Toast.LENGTH_SHORT);
+                toast.show();
+            }
         }
     }
 
     public void onClick(View v) throws IOException, InterruptedException {
-        Request1 async = new Request1();
-        async.execute(new int[]{1});
+        if (v.getId() == R.id.butt) {
+            Request1 async = new Request1();
+            async.execute(new int[]{1});
+        }
+        if (v.getId() == R.id.back) {
+            Intent i = new Intent(SettingsActivity.this, ProfileActivity.class);
+            startActivity(i);
+        }
     }
 }
